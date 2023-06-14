@@ -1,14 +1,44 @@
-import React from 'react';
-
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import MenuBar from "./MenuBar/MenuBar";
+import AddHealthData from "./components/AddHealthData/AddHealthData";
+import AnData from "./components/AnData/AnData";
+import ShowHelthData from "./components/ShowHelthData/ShowHelthData";
+import { MainContexWrapper } from "./Store/mainContext/mainContext";
 
 function App() {
+  const [loadComponent, setLoadComponent] = useState(<ShowHelthData />);
+  const buttonArr = [
+    {
+      id: 1,
+      label: "add-health",
+      btFun: () => {
+        setLoadComponent(<AddHealthData />);
+      },
+    },
+    {
+      id: 2,
+      label: "add-health",
+      btFun: () => {
+        setLoadComponent(<ShowHelthData />);
+      },
+    },
+    {
+      id: 3,
+      label: "add-health",
+      btFun: () => {
+        setLoadComponent(<AnData />);
+      },
+    },
+  ];
+
   return (
-   <div>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-   </div>                                     
+    <MainContexWrapper>
+      <div>
+        <MenuBar buttonArr={buttonArr} />
+        {loadComponent}
+      </div>
+    </MainContexWrapper>
   );
 }
 
