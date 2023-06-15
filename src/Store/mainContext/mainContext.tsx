@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const mainContext: any = createContext({
   healthData: [],
 });
-
+//const tHead = ['id', 'HR']
 const intialState = [
   {
     id: 0,
@@ -16,6 +16,17 @@ const intialState = [
     spo2: 123,
     name: "arc",
   },
+  {
+    id: 1,
+    HR : 1,
+    SBP: 2,
+    DBP:3,
+    sugar:4,
+    cal:5,
+    hemoglobin:6,
+    spo2: 123,
+    name: 'arc'
+},
 ];
 
 export const MainContexWrapper: React.FC<any> = (props) => {
@@ -24,6 +35,7 @@ export const MainContexWrapper: React.FC<any> = (props) => {
     <mainContext.Provider
       value={{
         healthData: healthData,
+        setHealthData: setHealthData
       }}
     >
       {props.children}
