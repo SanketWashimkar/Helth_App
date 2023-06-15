@@ -4,4 +4,6 @@ add an image as logo to abobe code
 
 download logo.png react js 
 
-make butto dianamic
+make button dianamic
+
+React js tailwind function component typescript table tbody and thead example
