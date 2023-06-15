@@ -25,15 +25,13 @@ const HealthTable: React.FC<Props> = ({ tHead, healthData }) => {
 
    // const heartRateProjection = trValue.HR >= 120 ? 'high' : 'low';
     return ( <tr key={trValue.id}>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.id}</td>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.name}</td>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.DBP}</td>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.HR}</td>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.SBP}</td>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.cal}</td>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.hemoglobin}</td>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.spo2}</td>
-        <td className="px-6 py-4 whitespace-nowrap">{trValue.sugar}</td>
+        {
+         tHead.map((thValue: string) => {
+          return (
+            <td key={thValue} className="px-6 py-4 whitespace-nowrap">{trValue[thValue]}</td>
+          );
+        })
+       }
       </tr>)
   })
 
