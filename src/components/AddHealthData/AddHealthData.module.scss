@@ -1,0 +1,47 @@
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 5px;
+    width: 266px;
+
+    label {
+        width: 250px;
+        height: 40px;
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 250px;
+        height: 40px;
+        padding: 2px;
+        border: 1px solid black;
+    }
+}
+
+
+.submit-bt {
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    background-color: rgb(37, 180, 227);
+    padding: 5px;
+    
+}
+
+.error-class{
+    color: red;
+}
+
+.submit-bt-empty {
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    background-color: rgb(192, 192, 192);
+    padding: 5px;
+}
