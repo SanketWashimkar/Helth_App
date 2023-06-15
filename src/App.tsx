@@ -7,7 +7,7 @@ import ShowHelthData from "./components/ShowHelthData/ShowHelthData";
 import { MainContexWrapper } from "./Store/mainContext/mainContext";
 
 function App() {
-  const [loadComponent, setLoadComponent] = useState(<ShowHelthData />);
+  const [loadComponent, setLoadComponent] = useState(<AddHealthData />);
   const buttonArr = [
     {
       id: 1,
