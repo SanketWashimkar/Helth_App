@@ -11,21 +11,21 @@ function App() {
   const buttonArr = [
     {
       id: 1,
-      label: "add-health",
+      label: "Add-Helth",
       btFun: () => {
         setLoadComponent(<AddHealthData />);
       },
     },
     {
       id: 2,
-      label: "add-health",
+      label: "Show-Helth",
       btFun: () => {
         setLoadComponent(<ShowHelthData />);
       },
     },
     {
       id: 3,
-      label: "add-health",
+      label: "Analitics-Helth",
       btFun: () => {
         setLoadComponent(<AnData />);
       },
