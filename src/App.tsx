@@ -34,8 +34,9 @@ function App() {
 
   return (
     <MainContexWrapper>
-      <div>
+     
         <MenuBar buttonArr={buttonArr} />
+        <div className="main-content">
         {loadComponent}
       </div>
     </MainContexWrapper>
