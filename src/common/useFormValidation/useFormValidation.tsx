@@ -5,7 +5,7 @@ const useFormValidation:any = (validationFun:any) => {
     const [inputTouched, setInputTouched] = useState(false);
 
     const inputIsEmpty = validationFun(input);
-    console.log('inputIsEmpty', inputIsEmpty);
+   // console.log('inputIsEmpty', inputIsEmpty);
     const formValidationObj = {
 
         input,
