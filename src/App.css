@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.main-content{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(115deg, #e45690 10%, #3f67d8 90%);
+}
