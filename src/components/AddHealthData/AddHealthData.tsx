@@ -2,7 +2,9 @@ import { useContext, useState } from "react";
 import mainContext from "../../Store/mainContext/mainContext";
 import styless from "./AddHealthData.module.scss";
 import useFormValidation from "../../common/useFormValidation/useFormValidation";
+import { Link, useNavigate } from "react-router-dom";
 const AddHealthData = () => {
+  const navigate = useNavigate();
   const healthContext: any = useContext(mainContext);
   const { setHealthData, healthData } = healthContext;
 
@@ -41,9 +43,11 @@ console.log("isFromValid", isFromValid);
 
 
   const addNewHealthData = (e: any) => {
+    try{
     e.preventDefault();
     //console.log('userName', userName);
     // console.log('hr',hr);
+
     const newHealthData = [
       ...healthData,
       {
@@ -55,11 +59,27 @@ console.log("isFromValid", isFromValid);
         cal: 52,
         hemoglobin: 62,
         spo2: 1232,
-        name: "arc2",
+        name: userInput,
       },
     ];
-    setHealthData(newHealthData);
+    // throw Error('issue in call')
+    setHealthData(newHealthData); // if error in set func then it will give error 
+    const  dialogObj = {
+       msg: 'new data added',
+       error: true
+     }
+     alert('new data added')
+     navigate('/showData')
+   }  catch (error) { 
+     alert(`there is an error in save data  ${error}`, )
+
+   }
+  
   };
+  
+
+  
+
   //console.log("chcek user name", userName === "");
   //const changeUserName = (e: any) => {
   //     if (e.target.value !== "") {
@@ -69,8 +89,32 @@ console.log("isFromValid", isFromValid);
   //     }
   //     setUserName(e.target.value);
   //   };
+  // const  buttonArr = [
+  //   {
+  //     id: 1,
+  //     label: 'add-health',
+  //     // btFun: () => {setLoadComponent(<AddHealthData/>)}
+  //   },
+  //   {
+  //     id: 2,
+  //     label: 'show-health',
+  //     // btFun: () => {setLoadComponent(<ShowHealthData/>)}
+  //   },
+  //   {
+  //     id: 3,
+  //     label: 'analytics-health',
+  //     // btFun:() => {setLoadComponent(<AnData/>)}
+  //   },
+  // ];
+
+
+
+
   return (
+    <>
     <div className={styless['container']}>
+      <Link to = {'/showData'}>{'show data'}</Link>
+      <br />
       <span className={styless['container-head']}> Add New User Data </span>
       <form onSubmit={(e) => addNewHealthData(e)}>
         <div className={styless["form-control"]}>
@@ -149,6 +193,7 @@ console.log("isFromValid", isFromValid);
         </button>
       </form>
     </div>
+    </>
   );
-};
+        };
 export default AddHealthData;
